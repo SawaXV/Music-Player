@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="next_song">Next song</string>
+    <string name="play_pause_song">Play/Pause song</string>
+    <string name="headphones">headphones</string>
+    <string name="song">SONG</string>
+    <string name="settings_menu">Settings menu</string>
+</resources>

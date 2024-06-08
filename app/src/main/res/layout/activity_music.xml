@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/musicLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/stopButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/next_song"
+            android:onClick="onStop"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/alert_light_frame"
+            app:tint="#D30B0B" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <ImageButton
+            android:id="@+id/playButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/play_pause_song"
+            android:defaultFocusHighlightEnabled="false"
+            android:onClick="onPlay"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.077"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/pauseButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/play_pause_song"
+            android:defaultFocusHighlightEnabled="false"
+            android:onClick="onPause"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_media_pause" />
+
+        <ImageView
+            android:id="@+id/songImage"
+            android:layout_width="347dp"
+            android:layout_height="338dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00F57C00"
+            android:contentDescription="@string/headphones"
+            android:foregroundTint="#D51919"
+            android:outlineAmbientShadowColor="#CA2F2F"
+            android:outlineSpotShadowColor="#D50A0A"
+            android:scaleType="center"
+            app:layout_constraintBottom_toTopOf="@+id/songName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/headphones" />
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="347dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="28dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="monospace"
+            android:text="@string/song"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#252525"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songImage" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="361dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#A62424"
+            android:foregroundTint="#F57C00"
+            android:progress="0"
+            android:progressBackgroundTint="#7C6E6E"
+            android:progressTint="#FFA000"
+            android:progressTintMode="src_over"
+            android:secondaryProgressTint="#FFA000"
+            app:layout_constraintBottom_toTopOf="@+id/stopButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/songName"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/playbackSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="1dp"
+            android:text="1x"
+            android:textColor="#BDB4B4"
+            app:layout_constraintBottom_toTopOf="@+id/playButton"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
